@@ -1,0 +1,64 @@
+.signals-content-wrap {
+  background: linear-gradient(360deg, #1e0039 100%);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include media(desktop) {
+    padding-bottom: 120px;
+  }
+}
+
+.signals-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.66667;
+  text-align: center;
+  color: #fff;
+  margin-top: 32px;
+}
+
+.signals-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 28px;
+  @include media(desktop) {
+    margin-top: 32px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.signals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  @include media(desktop) {
+    flex-direction: row;
+  }
+}
+
+.signals-list-item {
+  border-radius: 22px;
+  padding: 28px 18px;
+  backdrop-filter: blur(22px);
+  background: linear-gradient(180deg, rgba(253, 152, 12, 0) 0%, #ff7c17 100%);
+  @include media(desktop) {
+    width: 376px;
+    height: 165px;
+  }
+}
+
+.signals-list-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+}
+
+.signals-list-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  margin-top: 18px;
+}

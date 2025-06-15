@@ -1,0 +1,75 @@
+
+.progression-content-wrap {
+  background-image: url('../img/mobile/progression-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100%;
+  @include media(desktop) {
+    background-image: url('../img/desktop/progression-desktop-bg.png');
+    padding-top: 142px;
+    padding-bottom: 142px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.progression-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 140px;
+  @include media(desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 215px;
+    padding-left: 150px;
+    padding-right: 150px;
+
+  }
+}
+
+.progression-card {
+  @include media(desktop) {
+    width: 140px;
+  }
+}
+
+
+
+.progression-img {
+  width: 140px;
+height: 145px;
+}
+
+
+.progression-text {
+  font-weight: 600;
+font-size: 18px;
+text-align: center;
+color: #fff;
+}
+
+
+
+.progression-arrow {
+  margin: 15px auto;
+  @include media(desktop) {
+    display: none;
+    height: 150px;
+  }
+}
+
+.desktop-arrow {
+  display: none;
+  @include media(desktop) {
+    display: block;
+    transform: rotate(-90deg);
+    height: 150px;
+  }
+}
+
