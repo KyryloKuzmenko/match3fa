@@ -20,12 +20,8 @@
 
   @include media(desktop) {
     max-width: 1440px;
-    // padding-left: 174px;
-    // padding-right: 173px;
   }
 }
-
-
 
 /* === Fonts Setup === */
 body {
@@ -36,10 +32,20 @@ body {
   padding: 0;
 }
 
-h1,
+
 h2 {
   font-family: 'Orbitron', sans-serif;
   font-weight: 900;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(90deg, #ffea2b 0%, #ffc800 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @include media(desktop) {
+    font-size: 28px;
+  }
 }
 
 // h3,
@@ -49,4 +55,3 @@ h2 {
 //   font-family: 'Orbitron', sans-serif;
 //   font-weight: 700;
 // }
-

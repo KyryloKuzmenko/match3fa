@@ -1,0 +1,31 @@
+.gallery-content-wrap {
+  background: linear-gradient(180deg, #67009f 0%, #1e0039 100%);
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+
+.gallery-swiper {
+  margin-top: 28px;
+  @include media(desktop) {
+    position: relative;
+    left: -20px;
+    width: calc(100% + 39px);
+    overflow: hidden;
+  }
+}
+
+.gallery-swiper .gallery-img {
+  @include media(desktop) {
+    width: 338px;
+    height: 600px;
+  }
+}
+
+.gallery-swiper .gallery-swiper-slide {
+  @include media(desktop) {
+    width: 338px;
+    height: 600px;
+    flex: 0 0 338px;
+  }
+}

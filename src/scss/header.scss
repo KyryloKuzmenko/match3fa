@@ -1,12 +1,53 @@
+.header-section {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+}
 
+.header-content-wrap {
+  height: 60px;
+  border-bottom: 2px solid #fff;
+  background: #5301cf;
+  position: relative;
+  @include media(desktop) {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 .header-list {
   display: none;
   @include media(desktop) {
     display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+}
+.close-menu-btn {
+  display: none;
+}
+
+.open-menu-btn,
+.close-menu-btn {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  @include media(desktop) {
+    display: none;
   }
 }
 
+.backdrop.show {
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+  justify-content: center;
+}
 
 .backdrop {
   position: fixed;
@@ -16,9 +57,40 @@
   width: 100%;
   max-width: 375px;
   height: 100%;
+  min-height: 700px;
   margin: 0 auto;
   z-index: 1001;
   background: linear-gradient(180deg, #5301cf 0%, #1f013a 100%);
   opacity: 0;
   visibility: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.backdrop-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 472px;
+}
+
+
+.header-list-link,
+.backdrop-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 2.14286;
+  color: #fff;
+}
+
+.backdrop-list-item.active .backdrop-link,
+.header-list-item.active .header-list-link {
+  font-weight: 900;
+}
+
+// .backdrop-list-item.active .backdrop-link,
+// .header-list-item.active .header-list-link {
+//   font-weight: 900;
+// }

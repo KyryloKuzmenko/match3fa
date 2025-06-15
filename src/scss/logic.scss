@@ -1,0 +1,65 @@
+.logic-content-wrap {
+  background: linear-gradient(180deg, #53009f 0%, #1e0039 100%);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include media(desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 87px;
+  }
+}
+
+.logic-text {
+  font-size: 18px;
+  line-height: 1.66667;
+  text-align: center;
+  color: #fff;
+  margin-top: 32px;
+  @include media(desktop) {
+    width: 1160px;
+  }
+}
+
+.logic-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 28px;
+  gap: 12px;
+
+  @include media(desktop) {
+    margin-top: 50px;
+  }
+}
+
+.logic-list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+
+@include media(desktop) {
+  &:nth-child(odd) {
+    margin-right: 300px;
+  }
+
+  &:nth-child(even) {
+    margin-left: 300px;
+  }
+}
+}
+
+.star-img {
+  width: 72px;
+  height: 80px;
+}
+
+.logic-list-text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  color: #fff;
+}

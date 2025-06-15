@@ -1,0 +1,67 @@
+.lab-content-wrap {
+  background-image: url('../img/mobile/lab-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include media(desktop) {
+    background-image: url('../img/desktop/lab-desktop-bg.png');
+    height: 100%;
+    min-height: 600px;
+  }
+}
+
+.lab-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.66667;
+  text-align: center;
+  color: #fff;
+  margin-top: 32px;
+  @include media(desktop) {
+    margin-top: 47px;
+  }
+}
+
+.lab-lists-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 28px;
+  @include media(desktop) {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.lab-list-1,
+.lab-list-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.lab-list-1,
+.lab-list-2 {
+  @include media(desktop) {
+    flex-direction: row;
+  }
+}
+
+.lab-list-item {
+  border-radius: 22px;
+  padding: 18px 12px;
+  backdrop-filter: blur(22px);
+  background: linear-gradient(180deg, rgba(253, 152, 12, 0) 0%, #ff7c17 100%);
+  @include media(desktop) {
+    width: 330px;
+    height: 80px;
+  }
+}
+
+.lablist-text {
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+}
