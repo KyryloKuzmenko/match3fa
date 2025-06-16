@@ -8,6 +8,7 @@
 @import './garage.scss';
 @import './signals.scss';
 @import './rewards.scss';
+@import './faq.scss';
 @import './footer.scss';
 @import './cookies-modal.scss';
 @import './cpt.scss';
@@ -48,10 +49,9 @@ h2 {
   }
 }
 
-// h3,
-// h4,
-// h5,
-// h6 {
-//   font-family: 'Orbitron', sans-serif;
-//   font-weight: 700;
-// }
+section[id] {
+  scroll-margin-top: 60px;
+  @include media(desktop) {
+    scroll-margin-top: 80px;
+  }
+}

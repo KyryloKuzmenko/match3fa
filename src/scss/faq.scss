@@ -1,0 +1,55 @@
+.faq-content-wrap {
+  background-image: url('../img/mobile/faq-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include media(desktop) {
+    background-image: url('../img/desktop/faq-desktop-bg.png');
+  }
+
+}
+
+.faq-content {
+  @include media(desktop) {
+    padding-left: 170px;
+    padding-right: 170px;
+  }
+}
+
+.faq-list-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+}
+
+.faq-list-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  margin-top: 12px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-list-item {
+  backdrop-filter: blur(22px);
+  border: 1px solid #fff;
+  border-radius: 22px;
+  padding: 18px 12px;
+}
+
+.faq-list-item:nth-child(odd) {
+  background: linear-gradient(90deg, rgba(253, 152, 12, 0) 0%, #ff7c17 100%);
+}
+
+.faq-list-item:nth-child(even) {
+  background: linear-gradient(270deg, rgba(253, 152, 12, 0) 0%, #ff7c17 100%);
+}

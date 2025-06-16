@@ -1,83 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const openMenuBtn = document.querySelector('.open-menu-btn');
-  const closeMenuBtn = document.querySelector('.close-menu-btn');
+  const openBtn = document.querySelector('.open-menu-btn');
+  const closeBtn = document.querySelector('.close-menu-btn');
   const backdrop = document.querySelector('.backdrop');
-  const links = document.querySelectorAll(
+
+  const menuItems = document.querySelectorAll(
     '.header-list-item, .backdrop-list-item'
   );
+  const links = document.querySelectorAll('.header-list-link, .backdrop-link');
 
-  window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.scrollY;
+  const OFFSET = 120;
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
+  function setActiveByHref(href) {
+    menuItems.forEach(item => {
+      const link = item.querySelector('.header-list-link, .backdrop-link');
+      item.classList.toggle(
+        'active',
+        link && link.getAttribute('href') === href
+      );
+    });
+  }
 
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        links.forEach(link => {
-          const a = link.querySelector('.backdrop-link, .hidden-link');
-          if (a?.getAttribute('href') === `/#${sectionId}`) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
-        });
+  function onScroll() {
+    const pos = window.scrollY + OFFSET;
+
+    let currentId = null;
+    document.querySelectorAll('section[id]').forEach(sec => {
+      if (sec.offsetTop <= pos && sec.offsetTop + sec.offsetHeight > pos) {
+        currentId = sec.id;
       }
+    });
+
+    if (currentId) setActiveByHref(`/#${currentId}`);
+  }
+  window.addEventListener('scroll', onScroll);
+
+  links.forEach(a => {
+    a.addEventListener('click', () => {
+      setActiveByHref(a.getAttribute('href'));
+
+      if (backdrop.contains(a)) toggleMenu(false);
     });
   });
 
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      links.forEach(item => item.classList.remove('active'));
-      link.classList.add('active');
-      if (link.closest('.backdrop')) {
-        toggleMenu(false);
-      }
-    });
-  });
+  (function highlightOnLoad() {
+    const { pathname, hash } = location;
 
-  const currentPath = window.location.pathname;
-  const currentHash = window.location.hash;
-
-  links.forEach(item => item.classList.remove('active'));
-
-  links.forEach(link => {
-    const a = link.querySelector('.backdrop-link, .hidden-link');
-    if (!a) return;
-
-    const href = a.getAttribute('href');
-
-    if (href.startsWith('/#')) {
-      if (
-        href === `${location.pathname}${currentHash}` ||
-        href === `${location.hash}`
-      ) {
-        link.classList.add('active');
-      }
+    if (!hash) {
+      links.forEach(a => {
+        const href = a.getAttribute('href');
+        if (href === pathname || href === '.' + pathname) {
+          a.parentElement.classList.add('active');
+        }
+      });
       return;
     }
 
-    if (
-      currentPath !== '/' &&
-      !href.includes('#') &&
-      (href === currentPath || href === '.' + currentPath)
-    ) {
-      link.classList.add('active');
-    }
-  });
+    setActiveByHref('/' + hash);
+  })();
 
   function toggleMenu(show) {
-    openMenuBtn.style.display = show ? 'none' : 'block';
-    closeMenuBtn.style.display = show ? 'block' : 'none';
+    openBtn.style.display = show ? 'none' : 'block';
+    closeBtn.style.display = show ? 'block' : 'none';
     backdrop.classList.toggle('show', show);
   }
-
-  openMenuBtn?.addEventListener('click', () => toggleMenu(true));
-  closeMenuBtn?.addEventListener('click', () => toggleMenu(false));
+  openBtn?.addEventListener('click', () => toggleMenu(true));
+  closeBtn?.addEventListener('click', () => toggleMenu(false));
   backdrop?.addEventListener('click', e => {
     if (e.target === backdrop) toggleMenu(false);
   });
-
 });

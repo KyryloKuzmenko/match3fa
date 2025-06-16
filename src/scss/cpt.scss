@@ -1,0 +1,70 @@
+.cookies-content-wrap,
+.privacy-content-wrap,
+.terms-content-wrap {
+  background: linear-gradient(180deg, #53009f 0%, #1e0039 100%);
+  padding-top: 80px;
+  padding-bottom: 50px;
+  @include media(desktop) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.cookies-content,
+.privacy-content,
+.terms-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include media(desktop) {
+    padding-left: 66px;
+    padding-right: 60px;
+  }
+}
+
+.cookies-title,
+.privacy-title,
+.terms-title {
+  font-family: "Inter", sans-serif;
+font-weight: 700;
+font-size: 22px;
+line-height: 1.09091;
+text-align: center;
+color: #fff;
+}
+
+.cookies-subtitle,
+.privacy-subtitle,
+.terms-subtitle {
+  font-weight: 700;
+font-size: 18px;
+color: #fff;
+}
+
+.cookies-list-item,
+.privacy-list-item,
+.terms-list-item {
+  display: flex;
+}
+
+
+.cookies-text,
+.privacy-text,
+.terms-text {
+  font-family: "Inter", sans-serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+color: #fff;
+}
+
+.cookies-link,
+.privacy-link,
+.terms-link {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  text-decoration: underline;
+}
